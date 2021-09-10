@@ -1,0 +1,65 @@
+(define test1 #<<TEST
+let x = 3;
+let name = ”John”;
+let num = 4 * (2 + 3) / 5;
+TEST
+)
+(define test2 #<<TEST
+let a = [1, 2, 3];
+a[0] // =1
+TEST
+)
+(define test3 #<<TEST
+let person = [”name”: ”John”, ”age”: 20];
+person[”John”] // = 20
+TEST
+)
+(define test4 #<<TEST
+let add = fn(a, b) {return a + b;};
+
+let add = fn(a, b) {a + b;};
+
+add(3, 6);
+TEST
+)
+(define test5 #<<TEST
+let fib = fn(x) {
+ if (x == 0) {
+ 0
+ } else {
+ if (x == 1) {
+ 1
+ } else {
+ fib(x – 1) + fib(x – 2);
+ }
+ }
+};
+TEST
+)
+(define test6 #<<TEST
+let twice = fn(f, x) {
+ return f(f(x));
+};
+let square = fn(x) {
+ return x*x;
+}
+twice(square,2); // = 16
+TEST
+)
+"TEST1"
+(display-tokens (string->tokens test1))
+(display "\n")
+"TEST2"
+(display-tokens (string->tokens test2))
+(display "\n")
+"TEST3"
+(display-tokens (string->tokens test3))
+(display "\n")
+"TEST4"
+(display-tokens (string->tokens test4))
+(display "\n")
+"TEST5"
+(display-tokens (string->tokens test5))
+(display "\n")
+"TEST6"
+(display-tokens (string->tokens test6))
